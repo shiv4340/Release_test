@@ -1,0 +1,17 @@
+To list namespace
+kubectl get namespaces 
+To list objects in a namespace 
+kubectl get pods --namepsace <NS_name> 
+(OR)
+kubectl get pods -n <NS_name> 
+To list obects from all namespaces
+kubectl get pods --all-namespaces
+To create a namespace 
+kubectl create namespace <ns_name>
+To create k8s object in a namespace 
+1. in the spec file 
+metadata: 
+namespace: <ns_name>
+2. Using the apply command 
+kubectl apply -n <ns_name> -f <spec>.yml
+Note: what if we use both inside specfile and also in apply comman
